@@ -1,0 +1,65 @@
+---
+resources:
+  - name: m2
+    type: docker-image
+    source:
+      repository: {{docker-repo}}
+      username: {{docker-username}}
+      password: {{docker-password}}  
+      email: {{docker-email}}  
+  - name: blog-repo
+    type: git
+    source:
+      uri: https://github.com/making/blog-services
+      branch: master
+jobs:
+  - name: init-m2
+    plan:
+      - get: blog-repo
+      - task: build-m2
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: java
+              tag: 8-jdk-alpine 
+          inputs:
+            - name: blog-repo
+              path: repo
+          outputs:
+            - name: to-push  
+          run:
+            path: sh 
+            args: 
+            - repo/ci/tasks/m2.sh
+            - init
+      - put: m2
+        params:
+          import_file: to-push/rootfs.tar
+
+  - name: update-m2
+    plan:
+      - get: blog-repo
+      - get: m2
+      - task: build-m2
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: java
+              tag: 8-jdk-alpine 
+          inputs:
+            - name: blog-repo
+              path: repo
+            - name: m2
+          outputs:
+            - name: to-push    
+          run:
+            path: sh
+            args: 
+            - repo/ci/tasks/m2.sh
+      - put: m2
+        params:
+          import_file: to-push/rootfs.tar

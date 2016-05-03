@@ -1,0 +1,15 @@
+[submodule "blog-api"]
+	path = blog-api
+	url = https://github.com/categolj/blog-api.git
+[submodule "blog-kotlin-ui"]
+	path = blog-kotlin-ui
+	url = https://github.com/categolj/blog-kotlin-ui.git
+[submodule "eureka-server"]
+	path = eureka-server
+	url = https://github.com/categolj/eureka-server.git
+[submodule "feed"]
+	path = feed
+	url = https://github.com/categolj/feed.git
+[submodule "hystrix-dashboard"]
+	path = hystrix-dashboard
+	url = https://github.com/categolj/hystrix-dashboard.git
