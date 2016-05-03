@@ -60,6 +60,8 @@ jobs:
             path: sh
             args: 
             - repo/ci/tasks/m2.sh
+          params:
+            vcap.services.config-service.credentials.uri: {{config-service-url}}
       - put: m2
         params:
           import_file: to-push/rootfs.tar

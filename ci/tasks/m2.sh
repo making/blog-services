@@ -6,7 +6,6 @@ M2REPO=`pwd`/m2/rootfs/opt/m2
 
 DIR="$DIR eureka-server"
 DIR="$DIR blog-api"
-DIR="$DIR blog-ui"
 DIR="$DIR blog-kotlin-ui"
 DIR="$DIR feed"
 DIR="$DIR hystrix-dashboard"
