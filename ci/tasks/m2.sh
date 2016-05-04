@@ -19,6 +19,8 @@ cd repo
 	for d in $DIR;do
 	    echo "++++ Build $d ++++"
 	    cd $d
+	        artifactId=`./mvnw help:evaluate -Dexpression=project.artifactId | egrep -v '(^\[INFO])'`
+		echo $artifactId
 	        ./mvnw clean package -Dmaven.repo.local=$M2REPO
 	    cd ..
 	done
