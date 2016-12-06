@@ -4,11 +4,11 @@
 M2REPO=`pwd`/m2/rootfs/opt/m2
 
 
-DIR="$DIR eureka-server"
+# DIR="$DIR eureka-server"
 DIR="$DIR blog-api"
 DIR="$DIR blog-kotlin-ui"
 DIR="$DIR feed"
-DIR="$DIR hystrix-dashboard"
+#DIR="$DIR hystrix-dashboard"
 
 
 if [ "$1" == "init" ]; then
@@ -16,6 +16,7 @@ if [ "$1" == "init" ]; then
 fi
 
 cd repo
+ls -la
 	for d in $DIR;do
 	    echo "++++ Build $d ++++"
 	    cd $d
