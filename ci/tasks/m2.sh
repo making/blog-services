@@ -1,8 +1,8 @@
 
 #/bin/sh
 
-M2REPO=`pwd`/m2/rootfs/opt/m2
-
+BASEDIR=`pwd`
+M2REPO=${BASEDIR}/m2/rootfs/opt/m2
 
 # DIR="$DIR eureka-server"
 DIR="$DIR blog-api"
@@ -18,6 +18,7 @@ fi
 cd repo
 ls -la
 	for d in $DIR;do
+		${BASEDIR}/utils/scripts/add-repos-in-pom-xml.sh ${d}
 	    echo "++++ Build $d ++++"
 	    cd $d
 	        artifactId=`./mvnw help:evaluate -Dexpression=project.artifactId -Dmaven.repo.local=$M2REPO | egrep -v '(^\[INFO])'`
