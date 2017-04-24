@@ -37,7 +37,7 @@ jobs:
           outputs:
             - name: to-push  
           run:
-            path: sh
+            path: bash
             args: 
             - repo/ci/tasks/m2.sh
             - init
@@ -66,7 +66,7 @@ jobs:
           outputs:
             - name: to-push    
           run:
-            path: sh
+            path: bash
             args: 
             - repo/ci/tasks/m2.sh
           params:
