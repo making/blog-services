@@ -28,8 +28,8 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: java
-              tag: 8-jdk-alpine 
+              repository: maven
+              tag: 3.3.9-jdk-8
           inputs:
             - name: blog-repo
               path: repo
@@ -37,7 +37,7 @@ jobs:
           outputs:
             - name: to-push  
           run:
-            path: sh 
+            path: sh
             args: 
             - repo/ci/tasks/m2.sh
             - init
@@ -56,8 +56,8 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: java
-              tag: 8-jdk-alpine 
+              repository: maven
+              tag: 3.3.9-jdk-8
           inputs:
             - name: blog-repo
               path: repo
