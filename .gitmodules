@@ -1,6 +1,3 @@
-[submodule "blog-api"]
-	path = blog-api
-	url = https://github.com/categolj/blog-api.git
 [submodule "blog-kotlin-ui"]
 	path = blog-kotlin-ui
 	url = https://github.com/categolj/blog-kotlin-ui.git
