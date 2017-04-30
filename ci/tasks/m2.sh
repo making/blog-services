@@ -3,11 +3,12 @@
 BASEDIR=`pwd`
 M2REPO=${BASEDIR}/m2/rootfs/opt/m2
 
-# DIR="$DIR eureka-server"
+DIR="$DIR blog-domain"
+DIR="$DIR blog-mapper"
 DIR="$DIR blog-api"
 DIR="$DIR blog-kotlin-ui"
 DIR="$DIR feed"
-#DIR="$DIR hystrix-dashboard"
+
 
 
 if [ "$1" == "init" ]; then
@@ -20,11 +21,11 @@ ls -la
 		${BASEDIR}/utils/scripts/add-repos-in-pom-xml.sh ${d}
 	    echo "++++ Build $d ++++"
 	    cd $d
-	        artifactId=`./mvnw help:evaluate -Dexpression=project.artifactId -Dmaven.repo.local=$M2REPO | egrep -v '(^\[INFO])'`
-		echo $artifactId
-	        ./mvnw clean package -Dmaven.repo.local=$M2REPO
+	      ./mvnw clean install -DskipTests=true -Dmaven.repo.local=$M2REPO
+	      ./mvnw versions:set -DnewVersion=0.0.0-SNAPSHOT -DallowSnapshots -Dmaven.repo.local=$M2REPO
 	    cd ..
 	done
+rm -rf $M2REPO/am/ik/blog
 cd ..
 
 cd m2
