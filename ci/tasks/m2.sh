@@ -21,8 +21,8 @@ ls -la
 		${BASEDIR}/utils/scripts/add-repos-in-pom-xml.sh ${d}
 	    echo "++++ Build $d ++++"
 	    cd $d
-	      ./mvnw clean install -DskipTests=true -Dmaven.repo.local=$M2REPO
-	      ./mvnw versions:set -DnewVersion=0.0.0-SNAPSHOT -DallowSnapshots -Dmaven.repo.local=$M2REPO
+	      mvn clean install -DskipTests=true -Dmaven.repo.local=$M2REPO
+	      mvn versions:set -DnewVersion=0.0.0-SNAPSHOT -DallowSnapshots -Dmaven.repo.local=$M2REPO
 	    cd ..
 	done
 rm -rf $M2REPO/am/ik/blog
