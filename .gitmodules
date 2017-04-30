@@ -7,3 +7,9 @@
 [submodule "blog-api"]
 	path = blog-api
 	url = git@github.com:categolj/blog-api.git
+[submodule "blog-domain"]
+	path = blog-domain
+	url = git@github.com:categolj/blog-domain.git
+[submodule "blog-mapper"]
+	path = blog-mapper
+	url = git@github.com:categolj/blog-mapper.git
