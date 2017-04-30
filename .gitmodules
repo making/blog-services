@@ -4,3 +4,6 @@
 [submodule "feed"]
 	path = feed
 	url = https://github.com/categolj/feed.git
+[submodule "blog-api"]
+	path = blog-api
+	url = git@github.com:categolj/blog-api.git
