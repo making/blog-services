@@ -7,7 +7,9 @@ DIR="$DIR blog-domain"
 DIR="$DIR blog-mapper"
 DIR="$DIR blog-api"
 DIR="$DIR blog-kotlin-ui"
-DIR="$DIR feed"
+DIR="$DIR blog-webhook"
+DIR="$DIR blog-updater"
+#DIR="$DIR feed"
 
 
 
