@@ -13,3 +13,11 @@
 [submodule "blog-mapper"]
 	path = blog-mapper
 	url = https://github.com/categolj/blog-mapper.git
+[submodule "blog-updater"]
+	path = blog-updater
+	url = https://github.com/categolj/blog-updater.git
+	branch = develop
+[submodule "blog-webhook"]
+	path = blog-webhook
+	url = https://github.com/categolj/blog-webhook.git
+	branch = develop
