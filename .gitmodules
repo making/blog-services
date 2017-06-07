@@ -21,3 +21,7 @@
 	path = blog-webhook
 	url = https://github.com/categolj/blog-webhook.git
 	branch = develop
+[submodule "blog-point"]
+	path = blog-point
+	url = https://github.com/categolj/blog-point.git
+	branch = develop
